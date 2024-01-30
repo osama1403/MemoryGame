@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react"
 import images from './cards'
-// import{HiOutlineEmojiSad,HiOutlineEmojiHappy} from 'react-icons/hi'
 import{FaPlay,FaPause,FaRegSadTear,FaRegSmile} from 'react-icons/fa'
 
 const levels = [{ name: 'Easy', count: 6 }, { name: 'Medium', count: 8 }, { name: 'Hard', count: 10 }]
@@ -14,10 +13,6 @@ function shuffle(array) {
   }
   return array
 }
-
-
-// let counterInterval = null
-// let timeout = null
 
 function App() {
 
@@ -216,6 +211,7 @@ function App() {
             <p className={`px-4 py-2  text-xl rounded-lg  font-bold  text-white ${counter <= 10 ? 'bg-red-600' : 'bg-blue-500'}`}>
               {`${(counter / 60) < 10 ? '0' : ''}${Math.floor(counter / 60)}:${(counter % 60) < 10 ? '0' : ''}${(counter % 60)}`}
             </p>
+            {/* play Button */}
             <button className={`rounded-full w-10 h-10 text- flex items-center justify-center p-2 ${gameState === 'WIN' ? 'text-green-500' : gameState==='LOSE'?'text-red-500':'text-black'} bg-white`} onClick={handlePlay}>{gameState === 'STOPPED' ? <FaPlay className="ml-[2px]"/> : gameState === 'RUNNING' ? <FaPause/> : gameState === 'WIN' ? <FaRegSmile className="text-xl"/> : <FaRegSadTear className="text-xl"/>}</button>
 
           </div>
@@ -254,7 +250,6 @@ function App() {
                   <div className="card-container cursor-pointer" onClick={() => { cardClick(idx) }}>
                     <div className={`card aspect-square ${(showCards || matchedCards.includes(el.id) || tempCard === idx || tempCard2 === idx) ? 'rotatey0' : 'rotatey180'}`}>
                       <img src={el.img} alt="" className="w-full h-full cardface block object-cover " />
-                      {/* <img src={cardCover} alt="" className="w-full h-full cardface back block object-cover " /> */}
                       <div className="w-full h-full cardface back bg-gradient-to-b from-zinc-600 to-zinc-900 border border-zinc-500"></div>
                     </div>
                   </div>

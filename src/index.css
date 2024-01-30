@@ -2,19 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .card {
   transform-style: preserve-3d;
   transition: all;
   transition-duration: 500ms;
   
 }
-
-
-/* .card-container:hover>.card{
-  transform: rotateY(180deg);
-} */
-
 
 .back {
   transform: rotateY(180deg);
